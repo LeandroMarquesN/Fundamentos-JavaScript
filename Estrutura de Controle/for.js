@@ -32,3 +32,8 @@ numArray = [0, 10000000, 200000, 30000, 4000, 500, 60]
 for (let i = 0; i <= numArray.length; i++) {
     console.log(numArray[i])
 }
+arrayNomes = ["Leandro","Livia","Lavinia"]
+
+for(let c = 0 ; c <= arrayNomes.length;c++){
+    console.log(arrayNomes[c])
+}
