@@ -35,7 +35,7 @@ fabricantes.forEach(imprimir)
 //E fazendo desta maneira para cada elemento do array ele vai chamar a função imprimir.
 //E o forEach  vai passar como parametro o nome e o indice.
 
-//Poderiamos fazer desta maneira que vamos escrever abaixo porem aqui não vamo simprimir os indices
+//Poderiamos fazer desta maneira que vamos escrever abaixo porem aqui não vamos imprimir os indices
 
 fabricantes.forEach(function(fabricante){
     console.log(fabricante)
@@ -44,4 +44,4 @@ console.log("\n")
 
 //podemos faze com uma função arrow
 fabricantes.forEach(fabricante => console.log(fabricante))
-//O callback nada mais é do que nõs passarmos uma função e essa função será chmada qunado o evento acontecer
+//O callback nada mais é do que nõs passarmos uma função e essa função será chamada qunado o evento acontecer e no casos o evento é o loop e esse evento despara assim que ele encontra um novo elemento dentro do array então evento neste caso e cada elemento percorrido em um array
