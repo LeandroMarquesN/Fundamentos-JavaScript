@@ -9,7 +9,7 @@ function carro(velocidadeMaxima = 200, delta = 5) {
 
     //metodo publico atraves da palavra reservada (this) está função será responsável por acrecentar a velocidade a velocidadeAtual
     this.acelerar = function () {
-        //vamos colcoara um teste logico para que a velocidade não ultrapasse a velocidade maxima
+        //vamos colocar um teste logico para que a velocidade não ultrapasse a velocidade maxima
         if (velocidadeAtual + delta <= velocidadeMaxima) {
             velocidadeAtual += delta
         } else {
