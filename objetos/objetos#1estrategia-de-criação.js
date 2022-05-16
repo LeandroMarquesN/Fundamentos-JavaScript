@@ -1,11 +1,11 @@
 //video aula desta aula : https://www.udemy.com/course/curso-web/learn/lecture/9022212#overview
 
 //usando notação literal de objetos
-//podemos criar um obecto sem o uso de new object usndo somente a notação literal
+//podemos criar um obecto sem o uso de new object usando somente a notação literal
 const obj1 = {}
 console.log(obj1)
 
-//podemos criara atraves de um afunção construtora atraves do uso de new Object
+//podemos criar atraves de uma função construtora atraves do uso de new Object
 const obj11 = new Object
 console.log(obj11)
 
@@ -52,6 +52,6 @@ const filha = Object.create(null)
 filha.nome = 'Ana'
 console.log(filha)
 
-//tambem podemos criar um objeto usando um afunção famosa que retorna um obejto que o  ((JSON.parse)) está função converte o JSON em um objeto assim podemos acessar como uma variavel podemos usar isso em muitos caso em um webserver que recemos muitos json e assim podemos convertelos para um objeto onde fica mais facil de manipular
+//tambem podemos criar um objeto usando uma ,função famosa que retorna um obejto que o  ((JSON.parse)) está função converte o JSON em um objeto assim podemos acessar como uma variavel podemos usar isso em muitos caso em um webserver que recemos muitos json e assim podemos convertelos para um objeto onde fica mais facil de manipular
 const fromJSON = JSON.parse('{"info":"Sou um JSON"}')
 console.log(fromJSON.info)

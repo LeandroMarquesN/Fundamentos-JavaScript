@@ -23,7 +23,7 @@ console.log(resultado)
 //Criaremos 3 funções que passaremos como callback para função map.
 
 const soma10 = e => e + 10
-//no caso acima temos uma função onde recebemos o elemento onde o elemento recebe ele mesmo recebendo 10 e returno
+//no caso acima temos uma função onde recebemos o elemento. Onde o elemento recebe ele mesmo recebendo 10 e returno
 
 const triplo = e => e * 3
 

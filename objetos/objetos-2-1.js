@@ -21,7 +21,7 @@ const carro = {
         }],
         // POdemos tambem ter dentro deste objeto funções
         calcularValorSeguro: function(){
-            //aquidentro podemos colcoara os codigo para está função
+            //aqui dentro podemos colocar  os codigo para está função
         }
     }
 }
@@ -29,7 +29,7 @@ const carro = {
 //Podemos acessara os atributos atraves da notação ponto
 carro.proprietario.endereço.numero = 1000
 
-//POdemos acessara atravé a da notação colchete []
+//POdemos acessara através  da notação colchete []
 carro['proprietario']['endereço']['logradouro']='Av Gigante'
 console.log(carro)
 
