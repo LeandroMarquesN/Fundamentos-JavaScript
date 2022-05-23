@@ -14,7 +14,7 @@ const pessoa = {
 //Vamos Executar
 pessoa.falar()
 
-//Executando da maneira abaixo vai eme jerara um erro onde vai apresentara undefined.pois aqui temos um conflito entre a programção funcional e a programação orientada ao objeto.
+//Executando da maneira abaixo vai me jerar um erro onde vai apresentara undefined.pois aqui temos um conflito entre a programção funcional e a programação orientada ao objeto.
 const falar =pessoa.falar
 falar()
 
