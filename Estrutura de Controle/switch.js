@@ -6,7 +6,7 @@ break ==> temos que colocar está palavra reservada para que os outros case abai
 Math == usado para operação que envolve numeros ou aritiméticas.
 
 */
-//Aui temos uma constante imprimirResultado recebendo uma função!
+//Auqui temos uma constante imprimirResultado recebendo uma função!
 const imprimirResultado = function (nota) {
     switch (Math.floor(nota)) {
         case 10:

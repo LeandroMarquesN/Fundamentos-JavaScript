@@ -28,5 +28,5 @@ console.log(n1, n3, n5, n6)
 const [, [, fodaSe]] = [[5, 8, 8], [9, 6, 8]] //=> aqui eu tenho um array que é composto por 2 arrays
 console.log(`Este é o segundo elemento do segundo array que está dentro de um outro array que possui o valor : ${fodaSe}`)
 /*
-o primeiro elemento foi iguinorado o segundo elemento é um array dentro deste array estou iguinorando o primerio elemnto e extraindo o segundo elemento do segundo array 
+o primeiro elemento foi iguinorado o segundo elemento é um array dentro deste array estou iguinorando o primerio elemento e extraindo o segundo elemento do segundo array 
 */

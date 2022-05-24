@@ -1,5 +1,5 @@
 /*
-Criaremos uma função onde criara protduto onde vai receber o nome e o preço e como é uma função factori ela retorna um objeto.
+Criaremos uma função onde criara um  protduto onde vai receber o nome e o preço e como é uma função factori ela retorna um objeto.
 e nesse casso não precisamos colocar os dois pontos no atributo do objeto pois ja demos o mesmo nome que o parametro.
 mas poderia colocar se quisesse.
 
@@ -9,7 +9,7 @@ posso ter tambem uma factory que retorna funções tambem e não so objetos com 
 
 posso ter também uma facatory que retorne objetos que possuam em seus atributos funções 
 
-saõ padrões validos dentro da linguagem.
+são padrões validos dentro da linguagem.
 
 */
 function criarProduto(nome,preco,desconto = 0.1){
@@ -19,7 +19,7 @@ function criarProduto(nome,preco,desconto = 0.1){
         desconto
     }
 }
-
+//Aqui estamos atribuindo as funções as constantes para somente depois mostrar na tela chamando as constantes e não a função
 const produtoA = criarProduto('carro',30.000,0.2)
 
 const produtoB = criarProduto('mesa',20.000)//deixei este sem o parametro do desconto para exemplificar  o valor padrão 0.1 deixado com padrão nos parametros.
@@ -30,3 +30,12 @@ console.log(produtoB)
 //posso criar o produto desta maneira chamando a função diretamente.
 console.log(criarProduto('celuar',500.00))
 
+//criando um objeto de meus sports
+function MeusSports(musculação,natação){
+    return {
+        musculação,
+        nata: natação
+    }
+}
+const sports = MeusSports()
+console.log(MeusSports('musculação','natação'))

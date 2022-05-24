@@ -17,3 +17,13 @@ ou veja este site onde explica mais detalhado  : https://ricardo-reis.medium.com
 
 })()
 //Usar este tipo de função é uma maneira de fugirmos do escopo global 
+//expressão-de-função-imediatamente-invocada
+// Neste exemplo a variável add é referenciada como a função anônima que soma dois argumentos.
+
+// Além disso, você pode executar a função imediatamente após criá-la:
+
+let add = (function(a,b){
+   return a +b
+})(10,20)
+
+console.log(add)

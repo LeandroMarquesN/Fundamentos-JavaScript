@@ -27,3 +27,19 @@ function personFactory(name) {
   console.log(personFactory('Tulio'))
   
   console.log(personFactory('João'))
+
+  //criando um novo exempo :
+  function MInhasQaulidades(q1='alpha',q2='beta',q3='omega') {
+    this.quali = {
+      qua1 :q1,
+      qua2 :q2,
+      qua3 :q3
+    }
+    return `\nEssas são as minnhas qualidades:\n${q1}, ${q2}, ${q3}!`
+     
+    
+  }
+  console.log(MInhasQaulidades('bonito','legal','gentil'))
+  console.log(MInhasQaulidades('chato','folgado','mulherengo'))
+  //Quando não é passado nenhu parametro é passado para a função! os valores definidos como padrão são mostrados na tela!. 
+  console.log(MInhasQaulidades())

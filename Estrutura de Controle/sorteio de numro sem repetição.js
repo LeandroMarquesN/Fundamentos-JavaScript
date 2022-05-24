@@ -4,16 +4,17 @@
 
         Sorteio de numeros sem repertir
 */
-function sorteio(min, max) {
+function sorteio(max , min) {
     const numSorteado = Math.random() * (max - min) + min
     return Math.floor(numSorteado)
 }
 let vet = []
-let encotrado
+let encontrado
 let p = 0
 
 while (p < 10) {
     vet[p] = sorteio(1, 10)
+    console.log(vet[p])
     encontrado = false
     for (let aux = 0; aux < p; aux++) {
         if (vet[aux] == vet[p]) {
@@ -21,9 +22,10 @@ while (p < 10) {
             break
         }
     }
-    if (!encontrado) {
+    if (encontrado) {
         p++
     }
 }
 console.log(vet)
+console.log("acabou")
 

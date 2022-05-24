@@ -18,6 +18,6 @@ while (opcao != -1) {
     opcao = sorteioNumero(-1, 10)
     console.log(`Opção escolhida foi ${opcao}.`)
 }
-console.log(`Encontramos o -1 então acabou!!`)
+console.log(`Encontramos o ${opcao} então acabou!!`)
 
 

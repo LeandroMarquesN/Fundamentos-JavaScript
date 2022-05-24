@@ -1,4 +1,4 @@
-//Neste arquivo vamos ver que 3 elementos que usamos muito na linguagem tem o tipo sendo function onde os 3 possuem um atributo chamdo? 
+//Neste arquivo vamos ver que 3 elementos que usamos muito na linguagem tem o tipo sendo function onde os 3 possuem um atributo chamado? 
 //Isso mesmo ".Prototype" pois toda função possui um atributo .prototype
 
 //Ex:
@@ -14,18 +14,18 @@ String.prototype.reverse = function () {
 }
 //Onde com o codigo assima iremos reverter uma String porem a reverse não tem na API mas fizemos uma iplementação.
 
-//O conceito dsiso é vc fazer novos atributos e conceitos em um determinado prototipo
+//O conceito  é vc fazer novos atributos e conceitos em um determinado prototipo
 
-//E para testar a nossafunção reverse que esta agora no prototype pois nãoexistia na API mas como disse nos adionamos este metodo no ptotype de String
+//E para testar a nossa função reverse que esta agora no prototype pois não existia na API mas como disse nos adionamos este metodo no ptotype de String
 console.log('Leandro Marques'.reverse())
 
 //Por mais que não tenha o metodo first em array para pegara o primeiro elemento de um array podemos fazer a iplementação no "prototype de um array"
-Array.prototype.first = function (a=0) {//por padrao declarei o elemento a tendo o alor de 0 caso não seja passado nenhum parametro
+Array.prototype.first = function (a=0) {//por padrao declarei o elemento a tendo o valor de 0 caso não seja passado nenhum parametro
 
-    //Um acoisa importante que nos conceguimos acessar um array ou uma string dentro de um metodo que criamos atraves do "this"
+    //Uma coisa importante que nos conceguimos acessar um array ou uma string dentro de um metodo que criamos atraves do "this"
     return this[a] // aqui estamos acessando o primeiro elemento de um array
 }
-//vamos criar um aray literal de 3 posiçõe onde oprimeiro e 0 o segundo e 1 e o terceiro é 2 escolha um numero de 0 a 2 para mostrar o elemento
+//vamos criar um aray literal de 3 posições onde o primeiro e 0 o segundo e 1 e o terceiro é 2 escolha um numero de 0 a 2 para mostrar o elemento
 const list = ["leo","li","lavi"]
 console.log(["leandro","livia","lavinia"].first())
 console.log(list.first(1))

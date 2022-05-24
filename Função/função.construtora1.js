@@ -30,7 +30,7 @@ const carro1 = new Carro('Charger', 'RT', 1970)
 
 console.log(carro1)
 
-//criando um novo objeto atraves da função construtora 
+
 function familia(membro1,membro2,membro3){
     this.menbro1 = membro1
     this.membro2 = membro2
@@ -39,3 +39,20 @@ function familia(membro1,membro2,membro3){
 
 const familiaMarques = new familia('leandro','livia','lavinia')
 console.log(familiaMarques)
+
+//vamos criar mais um exemplo de função construtora crindo um novo objeto chamado de hosbs
+ function hobs(h2,h3,h4){
+    this.hob2 = h2
+    this.hob3 = h3
+    this.hob4 = h4
+    return `Esses são os meus hobs: \n ${h2}\n ${h3}\n ${h4}.`
+    
+}
+
+const hobss = new hobs('tocar violão','Estudar programação','praticar musculação')
+console.log(hobss)
+
+console.log(hobs('Estudar programação','praticar musculação','dançar'))
+
+
+

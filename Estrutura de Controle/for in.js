@@ -1,7 +1,7 @@
 /*
         Estrutura de repetição (( FOR IN))
 ele percorre os atributos de um array ou objeto.
-não é um aforma tão interessante de percorrer um array.
+não é uma forma tão interessante de percorrer um array.
 ele percorre pelos indice e não pelos valores.
 */
 //declarando o array cores.

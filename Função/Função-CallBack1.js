@@ -44,4 +44,4 @@ console.log("\n")
 
 //podemos faze com uma função arrow
 fabricantes.forEach(fabricante => console.log(fabricante))
-//O callback nada mais é do que nõs passarmos uma função e essa função será chamada qunado o evento acontecer e no casos o evento é o loop e esse evento despara assim que ele encontra um novo elemento dentro do array então evento neste caso e cada elemento percorrido em um array
+//O callback nada mais é do que nõs passarmos uma função e essa função será chamada quando o evento acontecer e no casos o evento é o loop e esse evento despara assim que ele encontra um novo elemento dentro do array então evento neste caso e cada elemento percorrido em um array
