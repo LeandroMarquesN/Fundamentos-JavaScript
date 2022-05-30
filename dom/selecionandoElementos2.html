@@ -9,8 +9,87 @@
     <div id="primeiro">#primeiro</div>
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
-    <script>              
-        // ...
-    </script>
+    <!-- // par mais informações: https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector  
+
+    //  neste exercicio vamos trablhar com 
+    //  funções para selecionar elementos :
+    //  o "Queryselector"
+    //  Retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores. 
+    // sintaxe: document.querySelector(selectors);
+    // neste exercico vamos selecionar um elemento apartir de um "id" neste caso vamos passar um # poiso queryselector espera um selector css e ele é bem mais flexivel podemos selecionar por classe id tag por atributo -->
+    <script>  
+     document.querySelector('#primeiro').classList.add('destaque')
+    //  como neste exercicio vamos ficar adicionando e removendo está classe destaque vamos criar 2 funções 
+    const selecionar = seletor => {
+        document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+    }
+    // Cabe uma observação de querySelectorAll onde e selecionado as divs execuctando este codigo no console do navegador vamos ver que ele não retornaum htmlCollections com é o caso da função  getElementByTagname e ele retorna um Nodelist e esse NodeList tem a função forEach ! mas outrass funções como o map  e outras nãoe estão presentes entaõ precisamos converter de fato para um array para ter acesso a essas funções.
+
+    // para dar continuidade ao exercicio vamos criar um afunção para deselecionar 
+
+    const deselecionar =seletor => {
+        document.querySelectorAll(seletor).forEach (e => e.classList.remove('destaque'))
+    }
+       
+    
+    //Agora que temos as funções prontas simplesmente vamos usalas
+    //vamos selecionar todos que possuem a tag <div>
+    //chamando a função selecionar :
+    selecionar('div')
+    //Agora vamos tirar a selecão de  todos os elementos e e nesse caso podemos passar um selector universsal que é o * asterico como parametro para a função
+    deselecionar('*') 
+    //Agora vamos selecionar todos os elementos que tenham a classe terceiro e a classe ultimo no mesmo elemento perceba que dentro da string temos um ponto antes da palavra isso éum seletor css.
+    //e note tambem que eles estão juntos caso venha colocar um espaço entre eles não vais dar certo
+    selecionar('.terceiro.ultimo')
+    //Agora vamos descelecionar todos usando o * asterisco comoparametros para a função descelecionar pois é um seletor universsal
+    deselecionar('*')
+    //Agora vamos usar uma psceu do classe (:not(...)) onde vamos colocar o que eu quero que ele negue! e neste caso queremos que ele selecione todos menos o que contem o id =#primeiro
+    
+    selecionar(':not(#primeiro)')
+
+    // uma coisa que devemos ter em mente é qual o grau de compatibilidade da função em especifico que está sendo usada no codigo com o suporte que os navegadores tem e para ter essa ideia podemos usar o site (can i use)
+
+    //Agora vamos desselecionar todos 
+    deselecionar('*')
+    //Agora vamos selecionar usando o psceu do classe passando o primeiro elemento filho de algum elemento. A sintaze para esse psceu do calsse é ":nth-child(1)"
+    selecionar(':nth-child(1)')
+    //note que ele selecionou o primeiro elemento que é o primerio filho da tag <body> e tabém selecionou a tag <spam> pois ele é o  primeiro elemento filho da tag <div>
+
+        //agora vamos deselcionar todos novamente
+        deselecionar('*')
+        //Agora vamos usar novamente um psceu do classe para selecionar o primeiro elemento de um tipo especifico que vai ser a tag <div>
+        //A sintaxe para isso é : " div:nth-of-type(1)"
+        //E dentro dos parentes onde vai o parametro para o neth-of-type(?) podemos colocar qual elemento que queiramos que seja selecionado tanto o primerio 1 ou segundo 2 ou o terceiro 3 
+        selecionar('div:nth-of-type(1)')
+        //E neste caso ele so vai selecionar o primerio elemento do tipo<div> e não mais o <spam>
+        
+            //mas podemos selecionar o spam tambem:
+            selecionar('span:nth-of-type(1)')
+            //como podemos deselcionar o span
+            deselecionar('span:nth-of-type(1)')
+
+            //vamos deselecionar todos os elementos 
+            deselecionar('*')
+            //E agora vamos selecionar apartir de um atributo criado em nosso html para selecionar elementos
+            selecionar('[wb-attrib]')
+            //E neste caso foi selecionado a tag <span> pois foi o unico elemento que contem esse atributo personalisado caso eu colocasse esse atributo em outro elemento ele iria selcionar tambem 
+
+            // poderiamos transformalo os elementos selcionados que foram as div em um array para podermos ter acesso as funções de um array como o map o redux fiter etc..
+            // o codigo abaixo representa essa ideia.
+            Array.from(document.querySelectorAll('div'))
+
+            // ou poderiamos usar o operado r spreach [...] mas precissmos atribuilo em uma constante se nao da erro ! e assim poderiamos percorrelo com as funções de um array como map filter forEach redux 
+           const arrayDiv = [...document.querySelectorAll('div')]
+
+                //da mesma forma que fiz com o exercicio selecionado elemento 1 onde transformei um htmlColection  em um array eu consigo fazer com o Nodelist tambem lembrando que um getElement retorna um htmlColection  eu querySelctor retorna um nodelist
+
+            //vamos selecionar todos os elemento usando este metodo de selecção onde usamos a div arrayDiv e chamamos a função forEach para percorrela e depois usamo a classlist.add(?) para selecionar o elemento que desejamos
+            arrayDiv.forEach(e => {e.classList.add('destaque')})
+    
+
+
+
+
+    </script> 
 </body>
 </html>

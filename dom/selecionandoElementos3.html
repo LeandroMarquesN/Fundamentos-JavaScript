@@ -27,11 +27,40 @@
         <select name="hl">
             <option value="pt-br">Português (Brasil)</option>
             <option value="en-us">Inglês (Americano)</option>
+            <option value="linguagem desconhecida">linhagem desconhecida(?)</option>
         </select>
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+         //uma das formas que temos para slecionar os forms e atraves da propriedade document .foms onde ele vai trazer um array de todos os formularios fo tipo htmlcolection
+        //primerio forms ele vai dar uma coleção de formularios onde so tenho um 
+        console.log(document.forms)
+        //outra possibilidade que temos seria usando a notação de colchetes para acessar os elementos dentro de um array de um html colection
+        //Onde no caso estamos pegando o form de indice [0]
+        console.log(document.forms[0])
+        //outra forma nterressante seria usarmos o name par obter tanto os fomularios quanto os input desse formulario usanod o getElementsByname('?aqui eu passo o name')
+        console.log(document.getElementsByName('pesquisa'))
+        //onde no caso ele vai trazer um nodeList que possuui um elemento form
+        console.log(document.getElementsByTagName('form'))
+        //aqui como vc pode ver no console ele traz um htmlColection )
+        //usando o metodo abaixo ele ja vai trazer o elemento que estamos procurand que no caso é o pesquisa
+        console.log(document.forms.pesquisa)
+        //ou 
+        console.log(document.pesquisa)
+        //Usando essa mesma estratefia posso pegar elementos dentro do formulario
+        console.log(document.pesquisa.q)
+        //no codigo acima o javaScript entrou dentro do formulario pesquisa epegou o imput que tem o name"q" 
+        //por isso que muito recomendado usarmos o atributo "name" em nossas tags
+        //E atraves dessa mesma sisntaxe conseguimos alerar o input onde vamos atribuir o valor do input que possui o atributo "name= q" vai ter  o valor  ou o value ="Qualquer coisa"
+        document.pesquisa.q.value = "mudando o valor deste"
+        //Eantão ele vai alterar o valor do campo acessando atraves dos names
+        //mas podemos mexer no valor se um select ! e tambem acessando atraves dos names onde o valor colocado e o mesmo valor da tag optino
+        document.pesquisa.hl.value = 'linguagem desconhecida'
+        //uma outra maneira de saber qual o elemento do item está selecionado é usando a notação ponto em conjuto da busca dos names com o selectedindex
+        console.log(document.pesquisa.hl.selectedIndex)
+        //onde ele vai trazer a posição do array que esta o elemento selecionado que seria o 2 ja queum array começa na possição 0
+        const valor = document.pesquisa.q.value
+        console.log(valor)
     </script>
 </body>
 

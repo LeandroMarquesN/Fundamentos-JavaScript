@@ -14,10 +14,10 @@
 
         // Definição e Uso. A propriedade classList retorna a classe name(s) de um elemento, como um objecto DOMTokenList. Esta propriedade é útil para adicionar, remover e alternar classes CSS em um elemento. A propriedade classList é só de leitura, no entanto, você pode modificá-lo usando o add() e remove() métodos.
 
-        //Aqui estamos selecionando os elemento que possuem o "id" = 'primeiro' e logo apos estamos pegando a propriedade classlist e adicionamos com add a classe 'destaque' aqui ele sempre vai pegar o primerio elemento que conter o id 'primeiro' na'e ineressante que tenhamos 2 elementos com o mesmo id.
+        //Aqui estamos selecionando os elemento que possuem o "id" = 'primeiro' e logo apos estamos pegando a propriedade classlist e adicionamos com add a classe 'destaque' aqui ele sempre vai pegar o primerio elemento que conter o id 'primeiro' não é ineressante que tenhamos 2 elementos com o mesmo id.
         document.getElementById('primeiro').classList.add('destaque')
 
-        //Aqui todos os elemwntos div serão selecionados apartir do metodo getElemntsByTagName note que estamos atribuindo este metodo a uma constante divs onde estaremos usando no decorrer do codigo para selecionar os elementos e ele retorna um htmlcollections porem não podemos fazer muitas coisas com htmlcolections por isso é interessante transformalo em um array.
+        //Aqui todos os elementos div serão selecionados apartir do metodo getElemntsByTagName note que estamos atribuindo este metodo a uma constante divs onde estaremos usando no decorrer do codigo para selecionar os elementos e ele retorna um htmlcollections porem não podemos fazer muitas coisas com htmlcolections por isso é interessante transformalo em um array.
         const divs = document.getElementsByTagName('div')
 
         //Aqui pegamos todos os elmentos div transformamos em um array percorremos cada um deles com o foreach removendo a class 'destaque'
