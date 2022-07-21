@@ -32,18 +32,18 @@
         <button>Pesquisar</button>
     </form>
     <script>
-         //uma das formas que temos para slecionar os forms e atraves da propriedade document .foms onde ele vai trazer um array de todos os formularios fo tipo htmlcolection
+         //uma das formas que temos para selecionar os forms e atraves da propriedade document .forms onde ele vai trazer um array de todos os formularios do tipo htmlcolection
         //primerio forms ele vai dar uma coleção de formularios onde so tenho um 
         console.log(document.forms)
         //outra possibilidade que temos seria usando a notação de colchetes para acessar os elementos dentro de um array de um html colection
         //Onde no caso estamos pegando o form de indice [0]
         console.log(document.forms[0])
-        //outra forma nterressante seria usarmos o name par obter tanto os fomularios quanto os input desse formulario usanod o getElementsByname('?aqui eu passo o name')
+        //outra forma interressante seria usarmos o name par obter tanto os fomularios quanto os input desse formulario usando o getElementsByname('?aqui eu passo o name')
         console.log(document.getElementsByName('pesquisa'))
         //onde no caso ele vai trazer um nodeList que possuui um elemento form
         console.log(document.getElementsByTagName('form'))
         //aqui como vc pode ver no console ele traz um htmlColection )
-        //usando o metodo abaixo ele ja vai trazer o elemento que estamos procurand que no caso é o pesquisa
+        //usando o metodo abaixo ele ja vai trazer o elemento que estamos procurando que no caso é o pesquisa
         console.log(document.forms.pesquisa)
         //ou 
         console.log(document.pesquisa)
@@ -58,7 +58,7 @@
         document.pesquisa.hl.value = 'linguagem desconhecida'
         //uma outra maneira de saber qual o elemento do item está selecionado é usando a notação ponto em conjuto da busca dos names com o selectedindex
         console.log(document.pesquisa.hl.selectedIndex)
-        //onde ele vai trazer a posição do array que esta o elemento selecionado que seria o 2 ja queum array começa na possição 0
+        //onde ele vai trazer a posição do array que esta o elemento selecionado que seria o 2 ja que um array começa na possição 0
         const valor = document.pesquisa.q.value
         console.log(valor)
     </script>

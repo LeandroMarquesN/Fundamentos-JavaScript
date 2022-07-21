@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<article>Definição e uso,<br>
+    O reduce()método executa uma função redutora para o elemento array.<br>
+    
+    O reduce()método retorna um único valor: o resultado acumulado da função.<br>
+    
+    O reduce()método não executa a função para elementos de array vazios.<br>
+    
+    O reduce()método não altera a matriz original.</article>
+
+<p>Calcula a soma dos numeros arredondados em um array</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [15.5, 2.3, 1.1, 4.7];
+
+document.getElementById("demo").innerHTML = numbers.reduce(getSum, 0);
+//o primerio parametro é um acumulador o segundo e o elemento 
+function getSum(total, num) {
+  return total + Math.round(num);
+}
+</script>
+
+</body>
+</html>

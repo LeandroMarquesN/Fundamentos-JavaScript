@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        
+    }
+    .principal {
+        display: flex;
+        width:40%;
+        height: 40vh;
+        border: solid 2px red;
+        border-radius: 20px;
+        justify-content: center;
+        margin: 15% 30% 35%;
+        
+        
+        
+    }
+    .a {
+        display: flex;
+        height: 30vh;
+        flex-direction: column;
+        border: 2px solid red;
+        border-radius: 20px;
+        padding: 4px;
+        margin-top: 30px;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        
+    }
+  
+    #demo {
+        display: flex;
+        border:  2px solid red;
+        border-radius: 4px;
+        justify-content: space-evenly;
+    
+ 
+        width: 60%;
+    }
+    input {
+        display: flex;
+        flex-direction: row;
+        
+        border-radius: 20px;
+        border: none;
+        text-decoration: underline red 3px;
+    }
+
+</style>
+<body>
+    <main class="principal">
+        <div class="container">
+            <div class="a" id="a">
+                <h2 class="h2">Lançamento financeiro</h2>
+                <p id="demo"></p>
+            </div>
+           
+        </div>
+    </main>
+    <script >
+        //lancamento financeiro e cilco financeiro onde termeos duas classes um apra fazer o lançamento das despesas e outra para fazer o claculo de quanto sobra depois de pagarmos as contas
+         class lancamento {
+            constructor(conta='tipo-de Conta',valor = 0) {
+                this.conta = conta
+                this.valor = valor
+            }
+         }
+
+         class CicloFinanceiro {
+            constructor( mes, ano) {
+                this.mes = mes
+                this.ano = ano
+                this.lancamentos = []
+            }
+
+            addLancamentos(...lancamentos) {
+                lancamentos.forEach( l => this.lancamentos.push(l))
+            }
+
+            sumario() {
+                let valorConsolidado = 0 
+                this.lancamentos.forEach(l => {
+                    valorConsolidado += l.valor
+                } )
+                return valorConsolidado
+            }
+         }
+
+         const div1 = document.querySelector("#a") 
+
+         const inputText = document.createElement('input')
+         inputText.id = "text"
+         inputText.setAttribute('type','text')
+         inputText.setAttribute('placeholder',' digite o tipo de entrada aqui!')
+
+         const inputNumber = document.createElement('input')
+         inputNumber.id = 'number'
+         inputNumber.setAttribute("type","Number")
+         inputNumber.setAttribute('placeholder','digite o valor aqui')
+         inputNumber.setAttribute('min',1)
+
+         div1.appendChild(inputText)
+         div1.appendChild(inputNumber)
+
+         const btn =  document.createElement('button')
+         btn.setAttribute('id','button')
+         div1.appendChild(btn)
+         btn.classList.add('button')
+         btn.textContent = 'Enviar'
+
+        
+
+         btn.addEventListener("click",function (evento){
+            evento.preventDefault()
+                const conta  = document.querySelector('#text')
+               
+
+                const valor = document.querySelector('#number')
+               
+
+                alert("Deu certo "+conta.value+" "+valor.value+" !!")
+         })
+
+       
+
+
+         //valores positivos  como salario sao jogados como positivo
+         const salario = new lancamento('salario',45000)
+
+         //valores negativos que vao ser contas serão jogados como negativo
+         const contadeLuz = new lancamento('Luz',-220)
+
+         //criar o ciclo financeiro
+         const  contas = new CicloFinanceiro(6,2018)
+         contas.addLancamentos(salario,contadeLuz)
+
+         let res = contas.sumario()
+
+         document.querySelector('#demo').innerHTML = `R$ ${res}`
+
+    </script>
+</body>
+</html>

@@ -31,7 +31,7 @@ console.log(aprovados)
 console.log(aprovados[2])
 
 //Função slice de um  array
-// slice(3,2)==> isso coresponde que vamos trabahar com o indice 3 onde vamos escluir 2 elementos  apartir do indice 1
+// slice(3,2)==> isso corresponde que vamos trabahar com o indice 3 onde vamos escluir 2 elementos  apartir do indice 1
 aprovados.splice(3,2)
 console.log(aprovados)
 //perceba que os elementos do indice 3 e 4 que corresponde ao elementos carlos e fabiana foram excluidos

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cirando objetos com classes</title>
+</head>
+<style>
+    .A {
+        display: flex;
+        justify-content: center;
+        border-radius: 30px;
+        width: 60%;
+        
+        color:blue;
+        transition: transform 0.5s ease ;
+    }
+    .A:hover {
+        border:2px solid red;
+        transform: scale(1.1);
+    }
+</style>
+<body>
+    <main class="principal">
+        <div class="container">
+            <h2>Classes javaScript</h2>
+            <p>Como usar classe javaScript passando parametros aos metodos</p>
+            <a href="https://www.udemy.com/course/curso-web/learn/lecture/9075108#overview">link para este aula</a>
+            <p id="demo"></p>
+        </div>
+    </main>
+    <script>
+        //criando uma classe que vai criar um objeto  carro
+        class Car {
+            constructor(name, year) {
+                this.nome = name
+                this.ano = year
+            }
+            anoVeiculo(ano) {
+                return ano - this.ano
+            }
+        }
+
+        let date = new Date()
+        let year = date.getFullYear()
+
+        let meuCarro = new Car("fusca",2014)
+
+        document.getElementById("demo").innerHTML = "Meu carro é do ano de  "+meuCarro.ano +" <br> ele é um  "+meuCarro.nome+"<br> E como estamos nos ano de "+year+"<br> <h2 class='A'>Então o meu carro tem  "+meuCarro.anoVeiculo(year) + " anos de uso !! </h2>" 
+    </script>
+</body>
+</html>

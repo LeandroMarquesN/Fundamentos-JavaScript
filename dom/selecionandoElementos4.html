@@ -22,7 +22,93 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        //nesta aula vamos aprender como apartir de u determinado elemento conseguimos encontrar ouros elementos ou seja vamos navegar dentro da DOM pois conseguimos pegar os filhos de um determinado elemento sendo o primerio até o ultimo elemento 
+        //1ª etapa vamos criar uma função para facilitar o nosso console.log e neste caso não poderia ser um arrow function pois o this iria apontar para o window
+        function log(){
+            console.log(this)
+        }
+        //vamos rever o assunto referente ao prototype 
+        // no codigo abaixo quero que meu htmlColection prototype tenha a função log que  acabei de criar pois alguns resultados retorna o htmlColection
+        HTMLCollection.prototype.log = log
+        //vou fazer o mesmo para o htmlElemnt protoype pois em alguma situações como o getElemntById retorna um elemnt
+        HTMLElement.prototype.log = log
+        //vamos fazer o mesmo para o nodelist onde o nodelist e composto por node
+        NodeList.prototype.log = log
+        //Então vamos fazer o mesmo para o Node
+        Node.prototype.log = log
+        //Agora todos os elemntos agora quando for chamado a função log le ira se logar no console onde nos vamos usar muito para simplificar o nosso codigo do console.log()
+
+        //vamos selecionar a lista do nossso html onde ela está contida dentro de uma tag <div> e dentro temos uma tag <ul>
+            //para simplificar e não termos que selecionar sempre que for usada a lista vamos atribui a uma constante
+            const lista = document.querySelector('div ul')
+            lista.parentNode.log()
+            //E neste caso o primerio metodo que vai ser focado aqui onde o ponto log() que está chamando a função log é so uma simplificação pois poderiamos colocar console.log(lista.parentNode)só que vamos fazer da maneira acima para relembrar um pouco o conceito de prototype pois conseguimos ter este tipo de flexibilidade dentro de javaScripty onde a fnção .Log() so esta disponivel pois passamos ela para os protipos que especificamos anteriormente
+            //Aqui vamos chamar a atenção para o parentNode onde a partir de um elemento conseguimos facilmete pegar o elemento pai que no caso será a <div> pois ela está acima da tag <ul>
+
+            //agora vamos pegar os nós da lista os childNodes
+            lista.childNodes.log()
+            //Onde no caso ele vai pegar os filho os child que são os <li>
+            //lembrando que devemosestar com o concole  do browser aberto para visualisar o que está acontecendo ctrl + shift + 1 vc abre o console do browser
+            //entaõ vamos ver que vai retorna um nodelist onde temos os elementos do html porem temos tambem o text para evitar isso nos temos que retirar os espaçõs entre as <li> do nosso html
+
+            //ex: <ul><li>algo</></ul>
+
+             //vamos voltar o codigo do html para que ele fique como está na segunda maneira pois o childNode gera o efeito de criar elementos do tipo text nos espaçõs em branco 
+             //vamos ver outra maneira sem esse efeito
+
+             //vamos pegar o primerio elemento
+             const primerio = lista.firstChild
+             primerio.log()
+             //agora vamos selecionara o proximo irmão desse elemento
+             primerio.nextSibling.log()
+             //no codigo abaixo eu fiz assim para pegar o <li> ana<li>
+             primerio.nextSibling.nextSibling.nextSibling.log()
+            //mas poderia fazer da maneira abaixo atribuindo em uma constante
+             const second = primerio.nextSibling.nextSibling.nextSibling
+             second.log()
+             //entaão elevai mostrar as tag <li> no console
+            
+                //agora vamos pegara o ultimo elemento o lastchild porem ele vai retorna um elemento textual um #text pois ele está levando o espaço em branco que esta'no html em consideração
+                
+                const ultimo = lista.lastChild
+                ultimo.log()
+                //E para pegar o elemento anterior de um determinado elemento temos afunção:
+                ultimo.previousSibling.log()
+               
+                //no codigo abaixo ele vai pegara o espaço em branco de um a<li> para outra 
+                ultimo.previousSibling.previousSibling.log()
+                //aqui eu repeti o previousSibling novamente para ele pegar a tag <li> ana <li>
+                ultimo.previousSibling.previousSibling.previousSibling.log()
+                //uma outra forma de pegarmos todos os nos filhos seria usara a função childream
+                lista.children.log()
+                //onde ele vai retornar aum HtmlColection e nesse caso não vem os textos e sim as <li> onde 'eum aabordagem mais interessante'
+
+                //Aqui é uma outra maneira de acessar o primerio elemento da lista
+                lista.firstElementChild.log()
+                //podemos pegara o ultimo elemento também
+                lista.lastElementChild.log()
+                //podemos misturar as funções 
+                //Aqui ele vai pegara o elemento contestual que 'eo espaço em branco e vai mostrar t#text no console pois temos espaçõs em branco de um elemento html para outra '
+                lista.parentNode.previousSibling.log()
+                //por isso vamos repetir a função previousSibling novamente para ele pegar de fato a tag que queremos que a <div> que cotem o texto inicio
+                lista.parentNode.previousSibling.previousSibling.log()
+                //como posso pegar o elemento anterior eu posso pegar o proximo e como previsto ele vai pegara o espaço em branco 
+                lista.parentNode.nextSibling.log()
+                //então para pegar defato o lemento que queremos que a tag <div> com o texto fim vamos repetir novamente a função nextSibling
+                lista.parentNode.nextSibling.nextSibling.log()
+                //para ver de fato o elemento que stá sendo selcionado arraste o mause dentro do console em cima do elemento e veja no browser que ele esta sendo selecionado.
+                    
+            //uma outra maneira de selecionar elementos seria simplificando tudo isso que vimo utilizando o queryselectoall pois é a maneira ideal pois aqui ja pegamos de fato aquilo qqeu nos insteressa para podermos trabalhar em cima sem ficara nvaegando como nos exemplos anteriores
+            document.querySelectorAll('div ul li').log()
+            //e com esse seletor nos não temos o perigo de pegar o textos gerados pleos espaçõs em branco de uma taga para outra
+            //Lembrando que poderiamos fazer assim ja que .log()não faz parte da API e foium afunção criada onde atribuimos aos prototypes para facilitar o nosso codigo
+            console.log(document.querySelectorAll('div ul li'))
+            //vamos criara um a contante e atribuir esses seletorres a  ela para podermos trabalhar em cima
+            const lista2 = document.querySelectorAll('div ul li')
+           
+
+
+
     </script>
 </body>
 

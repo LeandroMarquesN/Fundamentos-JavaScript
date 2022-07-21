@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter3</title>
+ </head>
+ <body>
+    <h1>Methodo filter ()</h1>
+    <p>Mostrando os produtos com o preço maior que 1499 e que sejam frageis</p>
+    <p id="demo"></p>
+
+    <script>
+
+        const produtos = [
+            {nome:'Notebook',preco:2500, fragil: true},
+            {nome:'Ipad Pro',preco:5000, fragil: true},
+            {nome:'cueca',preco:20, fragil: false},
+            {nome:'Copo',preco:5, fragil: false},
+        ]
+
+
+
+
+   
+
+
+        const caro = produto => produto.preco >=500
+        const fragil = produto => produto.fragil === true
+
+        const produtoSelecionado = produtos.filter(caro).filter(fragil)
+        console.log(produtoSelecionado)
+     
+    </script>
+ </body>
+ </html>

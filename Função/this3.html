@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- https://www.udemy.com/course/curso-web/learn/lecture/8898970#overview -->
+    <script>
+        function Bomdia() {
+            this.contador ='1'
+            this.saudacao = 'Bom dia!!'
+
+//Com a função setInterval eu consigo fazer com que a função seja desparada sempre no tempo determinado aqui no caso será 3 segundo ou 3000
+
+//O this tambem está funcionando aqui pois estamos utilizando um afunção Arrow ou seta => onde esse tipo de função não deixa o this variar!!
+
+            setInterval(() => {
+                //se o this for tirado dos atributos não vai dar certo!
+                this.contador++
+                this.saudacao
+               document.write(" ",this.contador," , ",this.saudacao,"<h1 style='color:blue'>!! ")
+            }, 3000);
+        }
+        //No codigo abaixo tenho extanciar o o objeto bomdia() senão não não vai dar certo!
+        new Bomdia
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.w3schools.com/jsref/jsref_filter.asp" >Aula de filter W3 school</a>
+    <main id="principal"><Strong>Definição e uso
+        O filter()</strong></strong><br>método cria um novo array preenchido com elementos que passam em um teste fornecido por uma função.<br>
+        
+        O filter()método não executa a função para elementos vazios.<br>
+        
+        O filter()método não altera a matriz original.
+    </main>
+    <h3>Obtenha elementos de um array que possua um valor maior que 18</h3>
+    <div id="demo"> </div>
+
+    <script>
+        const  idade = [ 32 ,33 ,69 ,15, 12]
+        document.getElementById("demo").innerHTML = `Idades que estão acima de 18 ==> ${idade.filter(checadoAdulto)} `
+
+        function checadoAdulto(idad) {
+            return idad >= 18;
+        }
+    </script>
+</body>
+</html>

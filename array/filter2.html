@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Metodo filter()</h1>
+    <p>Clique em terstar  para obter os elementos do array que tenha um valor acima deste numero:</p>
+    <p><input type="number" id="idadeOk" value="30"></p>
+    <button onclick="myfunction()">Testar</button>
+    <p id="demo"> </p>
+
+    <script>
+        const idade = [32,33,69,10,59]
+
+        function idadeChecada(idad) {
+            return idad > document.getElementById("idadeOk").value
+        }
+        function myfunction() {
+            document.getElementById("demo").innerHTML = idade.filter(idadeChecada)
+        }
+
+    </script>
+</body>
+</html>

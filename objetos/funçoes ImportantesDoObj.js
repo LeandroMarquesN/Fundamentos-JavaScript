@@ -38,7 +38,7 @@ console.log("\n")
 //Ex:
 Object.defineProperty(pessoa,'dataNascimento',{
       enumerable: true,//pode ser numerada
-      writable: false,//não pode ser modificda
+      writable: false,//não pode ser modifica da
       value:'18/08/1984',//atribuindo o valor para a variavel onde não poderá ser modificado.
 })
 //executando

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cirando objetos com classes</title>
+</head>
+<body>
+    <main class="principal">
+        <div class="container">
+            <h2>Classes javaScript</h2>
+            <p>Como usar classe javaScript</p>
+            <p id="demo"></p>
+        </div>
+    </main>
+    <script>
+        //criando uma classe que vai criar um objeto  carro
+        class Carro{
+            constructor (nome, ano) {
+                this.nome = nome;
+                this.ano = ano;
+            }
+        }
+
+        //usando a classe para criar o objeto carro
+        const  meuCarro =  new Carro("fusca",1984)
+
+        //selecionando o elemento #demo no html
+        const demo =document.querySelector('#demo')
+        demo.innerHTML = meuCarro.nome + " "+ meuCarro.ano
+
+
+    </script>
+</body>
+</html>

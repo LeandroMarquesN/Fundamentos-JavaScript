@@ -1,7 +1,9 @@
 </html>
 <!DOCTYPE html>
 <html>
-
+    <!-- https://www.udemy.com/course/curso-web/learn/lecture/10285398#overview 
+        https://www.w3bai.com/pt/jsref/event_ondrop.html
+    -->
 <head>
     <meta charset='UTF-8'>
     <title>Trabalhando com Eventos #03</title>
@@ -35,7 +37,7 @@
         }
     </style>
 </head>
-
+<!-- para mais informações sobre o evento de clicar e arrastar um elemento: https://www.w3schools.com/jsref/event_ondragstart.asp -->
 <body>
     <div class="esquerda" wm-dropzone>
         <div class="item">1</div>
@@ -45,7 +47,30 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        // vamos selecionar todas as divs que estão dentro da div que possui a calss"esquerda" porem vamos adicionar um "id" a essas divs .
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        console.log(items)
+        //E vamos usar uma propriedade que vai nos permitir que quando clicando le possa ser arrastado : a propriedade é ddraggable
+        items.forEach((item,index) => {
+            //NA linha abaaixoestou setando o atributo draggable ou arraste para verdeiro
+            item.draggable =true
+            //Agora preciso definir um "id" para as divs onde estou defindo que os items da div voa receber  o id 'draggable-item- + numero deindex ja que percorremos com o forEach'
+            item.id = item.id || `draggable-item-${index}`
+            item.ondragstart = e => 
+            e.dataTransfer.setData('item-id',e.target.id)
+        })
+        //Paraq terminar o envento vamos usar a propriedade [wm-dropzone] onde será o local que você vai receber o selementos que acabamos de arrastar
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        dropzones.forEach(dropzone => {
+            dropzone.ondragover = e => e.preventDefault()
+            dropzone.ondrop = function(e) {
+                const id = e.dataTransfer.getData('item-id')
+                const item = document.getElementById(id)
+
+                //e.target.appendChild(item)
+                dropzone.appendChild(item)
+            }
+        })
     </script>
 </body>
 

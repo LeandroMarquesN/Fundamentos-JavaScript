@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        'use stricct'
+        //função construtora
+        function operacaoMatematica(operador1,operador2){
+            //metodo privado
+            let resul = 0
+
+            //metodo publico
+            this.soma = function () {
+                result = operador1 + operador2
+            }
+            this.subtracao = function () {
+                result = operador1 - operador2
+            }
+            this.raizQuadrada = function () {
+                result = Math.sqrt(operador1)
+            }
+            this.potencia = function () {
+                result = Math.pow(operador1,operador2)
+            }
+            //returno do resultado deixando o puyblico
+            this.resultado = function () {
+                return result
+            }
+        }
+        const operacao =  new operacaoMatematica (9,2)
+        const soma = operacao.soma()
+        
+        document.write("A soma entre 9 e 2 ==> ",operacao.resultado(),"<br>")
+        console.log("A soma entre 9 e 2",operacao.resultado())
+
+        const subtracao =operacao.subtracao()
+        document.write("A subtração entre  9 e 2 ==>",operacao.resultado(),"<br>")
+        console.log(operacao.resultado())
+
+        const raiz = operacao.raizQuadrada()
+        document.write("<h1 style='color:red'> A raiz quadrada de 9 é ==> ",operacao.resultado(),"</h1><br>")
+        console.log(operacao.resultado())
+
+        const potenciacao = operacao.potencia()
+        document.write("<h1 style='color:blue'> A potencia de 9 é ==> ",operacao.resultado(),"</h1><br>")
+        console.log(operacao.resultado())
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Soma os numeros de um array, começando da esquerda</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [175, 50, 25];
+document.getElementById("demo").innerHTML = numbers.reduce(myFunc);
+
+function myFunc(total, num) {
+  return total + num;
+}
+</script>
+
+</body>
+</html>

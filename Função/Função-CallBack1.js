@@ -31,7 +31,7 @@ function imprimir(nome, indice) {
     console.log(`${indice + 1}. ${nome}`)
 }
 fabricantes.forEach(imprimir)
-//ForEach é uma função que está armazenada dentro de um array e como a nossa constante fabricantes 'eum array no spodemo sfazer uso da função ForEach
+//ForEach é uma função que está armazenada dentro de um array e como a nossa constante fabricantes 'eum array nos podemos fazer uso da função ForEach
 //E fazendo desta maneira para cada elemento do array ele vai chamar a função imprimir.
 //E o forEach  vai passar como parametro o nome e o indice.
 

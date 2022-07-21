@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+    <!-- https://www.udemy.com/course/curso-web/learn/lecture/10285396#overview -->
 <head>
     <meta charset='UTF-8'>
     <title>Trabalhando com Eventos #02</title>
@@ -10,6 +10,18 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+       const item = document.querySelector('div')
+       item.style.position = 'absolute'
+
+
+       item.onmousemove = e => {
+        console.log(e)
+            const item = e.target
+            item.style.cursor ='move'
+            if(e.buttons) {//nesta condição estou perguntando se buttons e diferente de 0 esutou colocando esta propriedade pors ela vai identificar se foi clicado 
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px`
+                e.target.style.left = `${e.clientX - (item.clientWidth / 2)}px `
+            }
+       }
     </script>
 </body>

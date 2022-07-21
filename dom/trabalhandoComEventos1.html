@@ -6,12 +6,27 @@
     <title>Trabalhando com Eventos #01</title>
     <link rel='stylesheet' href='css/estilo.css'>
 </head>
-
+<!-- https://www.udemy.com/course/curso-web/learn/lecture/10285392#overview -->
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a href="https://google.com.br"
+        onclick="navegarEm5s(event)">Google</a>
     </div>
     <script>
-        // ...
+         //Aqui vamos interceeptar o evento click e vamos chamar uma função javaScript pra ela tomar as redias do evento de clicar 
+         //vamos criar um afunção que vai navgar em 5segundos para isso vamos usar o setTimeout() onde vai segurar essa requisição por 5 segundos e somente depois de 5 segundo ele vai navegar 
+
+         //assim que clicarmos ele vai navegar mas podemos parar o comportamento padrão com o preventdefault() onde vamos prvinir que o comportamento padrão ocorra
+         function navegarEm5s(evento) {
+            evento.preventDefault()
+            console.log('Saindo em 5 segundos...')
+
+            //Aqui o setTimeout está chamando uma função 
+            setTimeout(()=>{
+                const link = evento.target
+                window.location.href = link.href
+            },5000)
+         }
+
     </script>
 </body>

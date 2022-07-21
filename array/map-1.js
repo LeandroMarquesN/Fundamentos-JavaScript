@@ -1,5 +1,5 @@
 /*
-map é um afunção do array.
+map é uma função do array.
 associado a ele dentro dele existe um laço qu seá executado.
 E e ele serve para fazer um transformação no array.
 Então a ideia seria mapeara um array para um outro array do mesmo tamanho so que com dados transformados. 
@@ -38,13 +38,16 @@ const nums2 = [10,20,30]
 //Abaixo temos uma arrow onde temos um elemento elevado a 2
 const potenc = e => e**2
 
-//Abaixo temos uma arroe que vai converte para o formato dinheiro
+//Abaixo temos uma arrow que vai converte para o formato dinheiro
 const transDin = e => `${parseFloat(e).toFixed(2).replace(".",",")}`
 
 //Abaixo criamos uma constante para armazenar o meu novo array onde estamos atribuindo o array nums2 chamando a função MAP onde dentro de map temos nossas call back que farão a transformação do nosso novo array.
 const newNums2 = nums2.map(potenc).map(transDin)
 
-console.log(newNums2)
+
+//E agora estamos percorrendo cada elemeto do array newNums2 com o forEach para
+newNums2.forEach((nome, indice)=> {console.log(`${indice+1}) R$ ${nome}`)})
+
 
 
 

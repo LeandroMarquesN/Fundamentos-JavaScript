@@ -16,16 +16,16 @@
     //  o "Queryselector"
     //  Retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores. 
     // sintaxe: document.querySelector(selectors);
-    // neste exercico vamos selecionar um elemento apartir de um "id" neste caso vamos passar um # poiso queryselector espera um selector css e ele é bem mais flexivel podemos selecionar por classe id tag por atributo -->
+    // neste exercico vamos selecionar um elemento apartir de um "id" neste caso vamos passar um # pois o queryselector espera um selector  e ele é bem mais flexivel podemos selecionar por classe id tag por atributo -->
     <script>  
      document.querySelector('#primeiro').classList.add('destaque')
     //  como neste exercicio vamos ficar adicionando e removendo está classe destaque vamos criar 2 funções 
     const selecionar = seletor => {
         document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
     }
-    // Cabe uma observação de querySelectorAll onde e selecionado as divs execuctando este codigo no console do navegador vamos ver que ele não retornaum htmlCollections com é o caso da função  getElementByTagname e ele retorna um Nodelist e esse NodeList tem a função forEach ! mas outrass funções como o map  e outras nãoe estão presentes entaõ precisamos converter de fato para um array para ter acesso a essas funções.
+    // Cabe uma observação de querySelectorAll onde e selecionado as divs execuctando este codigo no console do navegador vamos ver que ele não retorna um htmlCollections como é o caso da função  getElementByTagname e ele retorna um Nodelist e esse NodeList tem a função forEach ! mas outrass funções como o map  e outras não e estão presentes então precisamos converter de fato para um array para ter acesso a essas funções.
 
-    // para dar continuidade ao exercicio vamos criar um afunção para deselecionar 
+    // para dar continuidade ao exercicio vamos criar uma função para deselecionar 
 
     const deselecionar =seletor => {
         document.querySelectorAll(seletor).forEach (e => e.classList.remove('destaque'))
@@ -38,8 +38,8 @@
     selecionar('div')
     //Agora vamos tirar a selecão de  todos os elementos e e nesse caso podemos passar um selector universsal que é o * asterico como parametro para a função
     deselecionar('*') 
-    //Agora vamos selecionar todos os elementos que tenham a classe terceiro e a classe ultimo no mesmo elemento perceba que dentro da string temos um ponto antes da palavra isso éum seletor css.
-    //e note tambem que eles estão juntos caso venha colocar um espaço entre eles não vais dar certo
+    //Agora vamos selecionar todos os elementos que tenham a classe terceiro e a classe ultimo no mesmo elemento perceba que dentro da string temos um ponto antes da palavra isso é um seletor css.
+    //e note tambem que eles estão juntos caso venha colocar um espaço entre eles, não vai dar certo
     selecionar('.terceiro.ultimo')
     //Agora vamos descelecionar todos usando o * asterisco comoparametros para a função descelecionar pois é um seletor universsal
     deselecionar('*')
@@ -47,7 +47,7 @@
     
     selecionar(':not(#primeiro)')
 
-    // uma coisa que devemos ter em mente é qual o grau de compatibilidade da função em especifico que está sendo usada no codigo com o suporte que os navegadores tem e para ter essa ideia podemos usar o site (can i use)
+    // uma coisa que devemos ter em mente é qual o grau de compatibilidade da função em especifico que está sendo usada no codigo com o suporte que os navegadores tem e para ter essa ideia podemos usar o site (can I use)
 
     //Agora vamos desselecionar todos 
     deselecionar('*')
@@ -59,7 +59,7 @@
         deselecionar('*')
         //Agora vamos usar novamente um psceu do classe para selecionar o primeiro elemento de um tipo especifico que vai ser a tag <div>
         //A sintaxe para isso é : " div:nth-of-type(1)"
-        //E dentro dos parentes onde vai o parametro para o neth-of-type(?) podemos colocar qual elemento que queiramos que seja selecionado tanto o primerio 1 ou segundo 2 ou o terceiro 3 
+        //E dentro dos parentes onde vai o parametro para o nth-of-type(?) podemos colocar qual elemento que queiramos que seja selecionado tanto o primerio 1 ou segundo 2 ou o terceiro 3 
         selecionar('div:nth-of-type(1)')
         //E neste caso ele so vai selecionar o primerio elemento do tipo<div> e não mais o <spam>
         
@@ -78,7 +78,7 @@
             // o codigo abaixo representa essa ideia.
             Array.from(document.querySelectorAll('div'))
 
-            // ou poderiamos usar o operado r spreach [...] mas precissmos atribuilo em uma constante se nao da erro ! e assim poderiamos percorrelo com as funções de um array como map filter forEach redux 
+            // ou poderiamos usar o operador spreach [...] mas precissamos atribuilo em uma constante se nao da erro ! e assim poderiamos percorrelo com as funções de um array como map filter forEach redux 
            const arrayDiv = [...document.querySelectorAll('div')]
 
                 //da mesma forma que fiz com o exercicio selecionado elemento 1 onde transformei um htmlColection  em um array eu consigo fazer com o Nodelist tambem lembrando que um getElement retorna um htmlColection  eu querySelctor retorna um nodelist

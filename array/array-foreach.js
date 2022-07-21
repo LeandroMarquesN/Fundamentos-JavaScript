@@ -1,7 +1,7 @@
 /*
-    foreach - è uma forma de percorrer um array temos outras maneira de percorrer comousando o map filter e reduce
+    foreach - è uma forma de percorrer um array temos outras maneira de percorrer como usando o map filter e reduce
 
-    quando colcoamos a função de callback para o forEach temos que respeitar aordem dos parametros da função de callback onde o primeiro é o elemento de fato e o segundo sempre será o indice.
+    quando colocamos a função de callback para o forEach temos que respeitar a ordem dos parametros da função de callback onde o primeiro é o elemento de fato e o segundo sempre será o indice.
 
     O terceiro parametro d função de callback é o proprio array em questao
 

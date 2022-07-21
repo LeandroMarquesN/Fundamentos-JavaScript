@@ -39,3 +39,4 @@ console.log(`O campo Harmonico de Dó maior é composto pelas nostas.`)
 const callbackDeDo = (nota,indice)=> console.log(`${indice+1}) ${nota}`)
 campoHarmonicoDeDo.forEach2(callbackDeDo)
 
+

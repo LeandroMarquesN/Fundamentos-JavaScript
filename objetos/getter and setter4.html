@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    [linkkk] {
+        color:red;
+        
+        
+    }
+    [linkkk]:hover {
+        color: blueviolet;
+       
+    }
+</style>
+<body>
+    <div id="container">
+        <main id="princi"><strong>metodo getter and Setter </strong><br> 
+            <a linkkk href="https://www.w3schools.com/js/js_object_accessors.asp"> Clique aqui  Link para referencia </a><br><br>  
+            As classes JavaScript contam com dois métodos especiais: um com o prefixo get que tem a função de retornar um valor, e outro precedido pela palavra set que serve para atribuir um valor.<br> <br> 
+            <strong>O que é Getter e setters?</strong><br> <br> 
+            Getters e setters são usados para proteger seus dados, especialmente na criação de classes. Para cada instância de variável, um método getter retorna seu valor, enquanto um método setter o define ou atualiza.<br> <br> 
+            Este exemplo usa uma langpropriedade para get o valor da languagepropriedade.<br> <br> 
+            <label>resultado do Exemplo abaixo:</label>
+            <div id="demo"> </div>
+        </main>
+        <article id="Article1"><br><strong>Função JavaScript ou Getter?</strong><br><br>
+            Neste primeira demostração estamos usando funcção no lugar do metodo get?
+            <div id="demo2"> </div>
+            <h4>Neste exemplo vou usar o metodo get</h4>
+            <div id="demo3"> </div>
+            <h4>O uso da lang propriedade, neste exemplo, armazena um valor em maiúsculas na language propriedade:</h4>
+            <div id="demo4"> </div>
+        </article>
+    </div>
+
+<script>
+    //Ex1
+        const  pessoa = {
+            primeiroNome:"Leandro",
+            segundoNome:"Marques",
+            idioma: "pt-br",
+
+            //metodo get tem a função de retornar um valo 
+            get lang(){
+                return this.idioma
+            }
+        }
+        document.getElementById("demo").innerHTML = `<strong>Resultado do exemplo</strong> ==> ${pessoa.idioma}`
+
+        //Ex2
+        const pessoa2 = {
+            primerioNome : 'Leandro',
+            segundoNome : "Marques",
+
+            nomeCompleto: function() {
+                return this.primerioNome+ " " +this.segundoNome;
+            }
+        } 
+        document.querySelector("#demo2").innerHTML = `<strong>resultado ==></strong>  ${pessoa2.nomeCompleto()}`
+
+        //Ex3 usando o metodo get 
+            const  pessoa3  = {
+                priNome : 'Leandro',
+                segNome : 'Marques',
+
+                get nomeCompleto2() {
+                    return this.priNome + " "+this.segNome
+                }
+            }
+            const demo3 = document.querySelector("#demo3")
+            demo3.innerHTML = `<h4>Resultado com metodo (get) </h4> ${pessoa3.nomeCompleto2}`
+
+          //Ex 4 usando o metodo set O uso da langpropriedade, neste exemplo, armazena um valor em maiúsculas na languagepropriedade: perceba que no set usamos parametros
+
+          const person = {
+
+            firstName: "John",
+            lastName: "Doe",
+            language: "",
+
+                set lang(lang) {
+                    this.language = lang.toUpperCase();
+                }
+
+            };
+
+            // Set an object property using a setter:
+            person.lang = "en";
+
+            // Display data from the object:
+            document.getElementById("demo4").innerHTML = person.language;
+
+</script>
+</body>
+</html>
+
+
+
